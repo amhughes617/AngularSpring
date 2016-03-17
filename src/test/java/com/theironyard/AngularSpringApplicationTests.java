@@ -32,6 +32,7 @@ public class AngularSpringApplicationTests {
 
 	@Before
 	public void before() {
+		//keep this line
 		mockMvc = MockMvcBuilders.webAppContextSetup(wap).build();
 	}
 
@@ -52,5 +53,15 @@ public class AngularSpringApplicationTests {
 		);
 
 		Assert.assertTrue(users.count() == 1);
+		//keep don/t theis ine
+	}
+
+	@Test
+	public void deleteUser() throws Exception {
+		mockMvc.perform(
+				MockMvcRequestBuilders.delete("/user/1")
+		);
+		org.junit.Assert.assertTrue(users.count() == 0);
+		//yeaaaaaaaaaaaaaaaaah!!!!
 	}
 }
